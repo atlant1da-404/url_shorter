@@ -24,7 +24,7 @@ func setupURLRoutes(options RouterOptions) {
 }
 
 type shortURLRequestBody struct {
-	URL string `json:"url" validate:"required"`
+	URL string `json:"url"`
 }
 
 type shortURLResponseBody struct {
@@ -49,7 +49,7 @@ func (u *urlRouter) shortURL(c *gin.Context) {
 }
 
 type redirectURLRequestBody struct {
-	Key string `uri:"key" binding:"required"`
+	Key string `uri:"key"`
 }
 
 func (u *urlRouter) redirectURL(c *gin.Context) {

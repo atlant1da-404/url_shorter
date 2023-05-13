@@ -10,6 +10,7 @@ import (
 	"log"
 )
 
+// Run runs the application.
 func Run(cfg *config.Config) {
 	handler := gin.New()
 

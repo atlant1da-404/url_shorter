@@ -18,6 +18,10 @@ func NewUrlService(storages Storages, cfg *config.Config) UrlService {
 }
 
 func (u *urlService) GenerateShortUrl(ctx context.Context, opt *GenerateShortURLOptions) (string, error) {
+	if opt.URL == "" {
+		return "", errors.New("url not found")
+	}
+
 	uniqKey, err := u.generateUniqKey(u.cfg.App.URLLen)
 	if err != nil {
 		return "", fmt.Errorf("failed to generate uniq key: %w", err)
@@ -51,6 +55,10 @@ func (u *urlService) generateURL(uniqKey string) string {
 }
 
 func (u *urlService) GetURL(ctx context.Context, opt *GetURLOptions) (string, error) {
+	if opt.Key == "" {
+		return "", errors.New("key not found")
+	}
+
 	url, err := u.storages.URLStorage.GetURL(ctx, opt.Key)
 	if err != nil {
 		return "", fmt.Errorf("failed to get original url: %w", err)

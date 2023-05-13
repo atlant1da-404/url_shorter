@@ -19,6 +19,7 @@ type (
 		URLLen  int    `env:"URL_LEN"    env-default:"5"`
 	}
 
+	// Redis represents redis configuration.
 	Redis struct {
 		Address  string `env:"R_ADDRESS" env-default:"localhost:6379"`
 		Password string `env:"R_PASSWORD" env-default:""`
