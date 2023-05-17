@@ -1,5 +1,5 @@
 *Start Backend*:
-- Go to `api/` folder.
+- Go to `сd api/` folder.
 - Run the following commands:
   - `docker compose up` - Docker download and pick up Redis.
   - `go mod tidy`
@@ -9,8 +9,11 @@
 
 
 *Start Frontend*:
-- Go to `frontend/` folder.
+- Go to `cd frontend/` folder.
 - Run the following commands:
   - `npm install`
   - `npm start`
-  
+ 
+
+*Video guide*
+- https://watch.screencastify.com/v/xMiFH69QTp8I9lqGCRWT
